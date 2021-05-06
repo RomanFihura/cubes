@@ -12,3 +12,13 @@ TEST(cubes, most_frequent_7) {
   
   EXPECT_NEAR(actualrelation, 7, 0.1);
 }
+TEST(cubes_method2, most_frequent_7) {
+  uint32_t temp = 0;
+  uint32_t runs=1000;
+  for (uint32_t i = 0; i < runs; i++) {
+    temp += mostFrequent2(runs);
+  }
+  double actualrelation = (static_cast<double>(temp) /  (runs));
+  
+  EXPECT_NEAR(actualrelation, 7, 0.1);
+}
