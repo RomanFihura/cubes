@@ -1,4 +1,10 @@
 #pragma once
+#include <algorithm>
+#include <random>
+#include <stdexcept>
+#include <stdint.h>
+#include <unordered_map>
+#include <vector>
 
-int mostFrequent(int n);
-int mostFrequent2(int n);
+int attempt();
+int mostFrequent2(std::vector<int> &arr);
