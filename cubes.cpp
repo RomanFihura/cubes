@@ -15,8 +15,8 @@ int attempt(uint32_t cubes, uint32_t cube_faces)
 int mostFrequent(uint32_t amount_of_throws, uint32_t cubes, uint32_t cube_faces)
 {
     std::unordered_map<int, int> freq_count;
-    for (uint32_t i = 0; i < amount_of_throws; ++i)
-        ++freq_count[attempt(cubes, cube_faces)];
+    for (uint32_t i = 0; i < amount_of_throws; i++)
+        freq_count[attempt(cubes, cube_faces)]++;
 
     auto most_freq_int =
         std::max_element(freq_count.begin(), freq_count.end(),
