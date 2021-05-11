@@ -12,15 +12,11 @@ int attempt(uint32_t cubes, uint32_t cube_faces)
     }
     return temp;
 };
-int mostFrequent(std::vector<int> &arr)
+int mostFrequent(uint32_t amount_of_throws, uint32_t cubes, uint32_t cube_faces)
 {
-    if (arr.empty())
-        return -1;
-
     std::unordered_map<int, int> freq_count;
-
-    for (const auto &item : arr)
-        freq_count[item]++;
+    for (uint32_t i = 0; i < amount_of_throws; ++i)
+        ++freq_count[attempt(cubes, cube_faces)];
 
     auto most_freq_int =
         std::max_element(freq_count.begin(), freq_count.end(),
@@ -28,11 +24,3 @@ int mostFrequent(std::vector<int> &arr)
 
     return most_freq_int->first;
 }
-void filling(std::vector<int> &numbers, uint32_t amount_of_throws, uint32_t cubes,
-             uint32_t cube_faces)
-{
-    for (uint32_t i = 0; i < amount_of_throws; i++)
-    {
-        numbers.push_back(attempt(cubes, cube_faces));
-    }
-};

@@ -2,9 +2,7 @@
 
 #include <gtest/gtest.h>
 
-TEST(cubes_method2, most_frequent_7)
+TEST(dice_roll, cubes2_cube_faces6)
 {
-    std::vector<int> numbers;
-    filling(numbers, 100000, 2, 6);
-    EXPECT_EQ(mostFrequent(numbers), 7);
+    EXPECT_EQ(mostFrequent(100000,2,6), 7);
 }
